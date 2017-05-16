@@ -18,3 +18,436 @@ contributors: Dave Herman
     margin: 2em 0;
   }
 </style>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-directive-prologues-and-the-use-strict-directive">14.1.1 Directive Prologues and the Use Strict Directive</a> is modified as follows.</p>
+
+<emu-clause id="sec-directive-prologues-and-the-use-strict-directive">
+  <h1>Directive Prologues<del> and the Use Strict Directive</del></h1>
+  <p>A <dfn id="directive-prologue">Directive Prologue</dfn> is the longest sequence of |ExpressionStatement|s occurring as the initial |StatementListItem|s or |ModuleItem|s of a |FunctionBody|, a |ScriptBody|, or a |ModuleBody| and where each |ExpressionStatement| in the sequence consists entirely of a |StringLiteral| token followed by a semicolon. The semicolon may appear explicitly or may be inserted by automatic semicolon insertion. A Directive Prologue may be an empty sequence.</p>
+  <p>A <dfn id="use-strict-directive">Use Strict Directive</dfn> is an |ExpressionStatement| in a Directive Prologue whose |StringLiteral| is either the exact code unit sequences `"use strict"` or `'use strict'`. A Use Strict Directive may not contain an |EscapeSequence| or |LineContinuation|.</p>
+  <p>A Directive Prologue may contain more than one Use Strict Directive. However, an implementation may issue a warning if this occurs.</p>
+  <p><ins>A <dfn id="use-module-directive">Use Module Directive</dfn> is an |ExpressionStatement| in a Directive Prologue whose |StringLiteral| is either the exact code unit sequences `"use module"` or `'use module'`. A Use Module Directive may not contain an |EscapeSequence| or |LineContinuation|.</ins></p>
+  <p><ins>A Directive Prologue may contain more than one Use Module Directive. However, an implementation may issue a warning if this occurs.</ins></p>
+  <p><ins>A <dfn id="use-script-directive">Use Script Directive</dfn> is an |ExpressionStatement| in a Directive Prologue whose |StringLiteral| is either the exact code unit sequences `"use script"` or `'use script'`. A Use Script Directive may not contain an |EscapeSequence| or |LineContinuation|.</ins></p>
+  <p><ins>A Directive Prologue may contain more than one Use Script Directive. However, an implementation may issue a warning if this occurs.</ins></p>
+  <emu-note>
+    <p>The |ExpressionStatement|s of a Directive Prologue are evaluated normally during evaluation of the containing production. Implementations may define implementation specific meanings for |ExpressionStatement|s which are not a Use Strict Directive and which occur in a Directive Prologue. If an appropriate notification mechanism exists, an implementation should issue a warning if it encounters in a Directive Prologue an |ExpressionStatement| that is not a Use Strict Directive and which does not have a meaning defined by the implementation.</p>
+  </emu-note>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-function-definitions-static-semantics-early-errors">14.1.2 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-function-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>
+    FunctionDeclaration : `function` BindingIdentifier `(` FormalParameters `)` `{` FunctionBody `}`
+
+    FunctionDeclaration : `function` `(` FormalParameters `)` `{` FunctionBody `}`
+
+    FunctionExpression : `function` BindingIdentifier? `(` FormalParameters `)` `{` FunctionBody `}`
+  </emu-grammar>
+  <ul>
+    <li>
+      If the source code matching this production is strict mode code, the Early Error rules for <emu-grammar>UniqueFormalParameters : FormalParameters</emu-grammar> are applied.
+    </li>
+    <li>
+      If the source code matching this production is strict mode code, it is a Syntax Error if |BindingIdentifier| is the |IdentifierName| `eval` or the |IdentifierName| `arguments`.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |FunctionBody| is *true* and IsSimpleParameterList of |FormalParameters| is *false*.
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |FormalParameters| also occurs in the LexicallyDeclaredNames of |FunctionBody|.
+    </li>
+    <li>
+      It is a Syntax Error if |FormalParameters| Contains |SuperProperty| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |FunctionBody| Contains |SuperProperty| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |FormalParameters| Contains |SuperCall| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |FunctionBody| Contains |SuperCall| is *true*.
+    </li>
+  </ul>
+  <emu-note>
+    <p>The LexicallyDeclaredNames of a |FunctionBody| does not include identifiers bound using var or function declarations.</p>
+  </emu-note>
+  <emu-grammar>UniqueFormalParameters : FormalParameters</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if BoundNames of |FormalParameters| contains any duplicate elements.
+    </li>
+  </ul>
+  <emu-grammar>FormalParameters : FormalParameterList</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if IsSimpleParameterList of |FormalParameterList| is *false* and BoundNames of |FormalParameterList| contains any duplicate elements.
+    </li>
+  </ul>
+  <emu-note>
+    <p>Multiple occurrences of the same |BindingIdentifier| in a |FormalParameterList| is only allowed for functions and generator functions which have simple parameter lists and which are not defined in strict mode code.</p>
+  </emu-note>
+  <emu-grammar>FunctionBody : FunctionStatementList</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of |FunctionStatementList| contains any duplicate entries.
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of |FunctionStatementList| also occurs in the VarDeclaredNames of |FunctionStatementList|.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of |FunctionStatementList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of |FunctionStatementList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of |FunctionStatementList| with arguments &laquo; &raquo; and &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The following new sections are added before <a href="https://tc39.github.io/ecma262/#sec-function-definitions-static-semantics-expectedargumentcount">14.1.7 Static Semantics: ExpectedArgumentCount</a>.</p>
+
+<emu-clause id="sec-function-definitions-static-semantics-containsusemodule">
+  <h1>Static Semantics: ContainsUseModule</h1>
+  <emu-see-also-para op="ContainsUseModule"></emu-see-also-para>
+  <emu-grammar>FunctionBody : FunctionStatementList</emu-grammar>
+  <emu-alg>
+    1. If the Directive Prologue of |FunctionStatementList| contains a Use Module Directive, return *true*; otherwise, return *false*.
+  </emu-alg>
+</emu-clause>
+
+<emu-clause id="sec-function-definitions-static-semantics-containsusescript">
+  <h1>Static Semantics: ContainsUseScript</h1>
+  <emu-see-also-para op="ContainsUseScript"></emu-see-also-para>
+  <emu-grammar>FunctionBody : FunctionStatementList</emu-grammar>
+  <emu-alg>
+    1. If the Directive Prologue of |FunctionStatementList| contains a Use Script Directive, return *true*; otherwise, return *false*.
+  </emu-alg>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-arrow-function-definitions-static-semantics-early-errors">14.2.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-arrow-function-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>ArrowFunction : ArrowParameters `=&gt;` ConciseBody</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if |ArrowParameters| Contains |YieldExpression| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |ArrowParameters| Contains |AwaitExpression| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |ConciseBody| is *true* and IsSimpleParameterList of |ArrowParameters| is *false*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |ConciseBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |ConciseBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |ArrowParameters| also occurs in the LexicallyDeclaredNames of |ConciseBody|.
+    </li>
+  </ul>
+  <emu-grammar>ArrowParameters[Yield, Await] : CoverParenthesizedExpressionAndArrowParameterList[?Yield, ?Await]</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the lexical token sequence matched by |CoverParenthesizedExpressionAndArrowParameterList| cannot be parsed with no tokens left over using |ArrowFormalParameters| as the goal symbol with its <sub>[Yield]</sub> and <sub>[Await]</sub> parameters set to the values used when parsing this |CoverParenthesizedExpressionAndArrowParameterList|.
+    </li>
+    <li>
+      All early error rules for |ArrowFormalParameters| and its derived productions also apply to CoveredFormalsList of |CoverParenthesizedExpressionAndArrowParameterList|.
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-method-definitions-static-semantics-early-errors">14.3.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-method-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>MethodDefinition : PropertyName `(` UniqueFormalParameters `)` `{` FunctionBody `}`</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |FunctionBody| is *true* and IsSimpleParameterList of |UniqueFormalParameters| is *false*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |UniqueFormalParameters| also occurs in the LexicallyDeclaredNames of |FunctionBody|.
+    </li>
+  </ul>
+  <emu-grammar>MethodDefinition : `set` PropertyName `(` PropertySetParameterList `)` `{` FunctionBody `}`</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if BoundNames of |PropertySetParameterList| contains any duplicate elements.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |FunctionBody| is *true* and IsSimpleParameterList of |PropertySetParameterList| is *false*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |FunctionBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |PropertySetParameterList| also occurs in the LexicallyDeclaredNames of |FunctionBody|.
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-generator-function-definitions-static-semantics-early-errors">14.4.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-generator-function-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>GeneratorMethod : `*` PropertyName `(` UniqueFormalParameters `)` `{` GeneratorBody `}`</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if HasDirectSuper of |GeneratorMethod| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |UniqueFormalParameters| Contains |YieldExpression| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |GeneratorBody| is *true* and IsSimpleParameterList of |UniqueFormalParameters| is *false*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |GeneratorBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |GeneratorBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |UniqueFormalParameters| also occurs in the LexicallyDeclaredNames of |GeneratorBody|.
+    </li>
+  </ul>
+  <emu-grammar>
+    GeneratorDeclaration : `function` `*` BindingIdentifier `(` FormalParameters `)` `{` GeneratorBody `}`
+
+    GeneratorDeclaration : `function` `*` `(` FormalParameters `)` `{` GeneratorBody `}`
+
+    GeneratorExpression : `function` `*` BindingIdentifier? `(` FormalParameters `)` `{` GeneratorBody `}`
+  </emu-grammar>
+  <ul>
+    <li>
+      If the source code matching this production is strict mode code, the Early Error rules for <emu-grammar>UniqueFormalParameters : FormalParameters</emu-grammar> are applied.
+    </li>
+    <li>
+      If the source code matching this production is strict mode code, it is a Syntax Error if |BindingIdentifier| is the |IdentifierName| `eval` or the |IdentifierName| `arguments`.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of |GeneratorBody| is *true* and IsSimpleParameterList of |FormalParameters| is *false*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |GeneratorBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |GeneratorBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of |FormalParameters| also occurs in the LexicallyDeclaredNames of |GeneratorBody|.
+    </li>
+    <li>
+      It is a Syntax Error if |FormalParameters| Contains |YieldExpression| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |FormalParameters| Contains |SuperProperty| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |GeneratorBody| Contains |SuperProperty| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |FormalParameters| Contains |SuperCall| is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if |GeneratorBody| Contains |SuperCall| is *true*.
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-async-function-definitions-static-semantics-early-errors">14.6.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-async-function-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>
+    AsyncMethod : `async` [no LineTerminator here] PropertyName `(` UniqueFormalParameters `)` `{` AsyncFunctionBody `}`
+  </emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if ContainsUseStrict of |AsyncFunctionBody| is *true* and IsSimpleParameterList of |UniqueFormalParameters| is *false*.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |AsyncFunctionBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |AsyncFunctionBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>It is a Syntax Error if HasDirectSuper of |AsyncMethod| is *true*.</li>
+    <li>It is a Syntax Error if |UniqueFormalParameters| Contains |AwaitExpression| is *true*.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of |UniqueFormalParameters| also occurs in the LexicallyDeclaredNames of |AsyncFunctionBody|.</li>
+  </ul>
+  <emu-grammar>
+    AsyncFunctionDeclaration : `async` [no LineTerminator here] `function` BindingIdentifier `(` FormalParameters `)` `{` AsyncFunctionBody `}`
+
+    AsyncFunctionDeclaration : `async` [no LineTerminator here] `function` `(` FormalParameters `)` `{` AsyncFunctionBody `}`
+
+    AsyncFunctionExpression : `async` [no LineTerminator here] `function` `(` FormalParameters `)` `{` AsyncFunctionBody `}`
+
+    AsyncFunctionExpression : `async` [no LineTerminator here] `function` BindingIdentifier `(` FormalParameters `)` `{` AsyncFunctionBody `}`
+  </emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if ContainsUseStrict of |AsyncFunctionBody| is *true* and IsSimpleParameterList of |FormalParameters| is *false*.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |AsyncFunctionBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |AsyncFunctionBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>It is a Syntax Error if |FormalParameters| Contains |AwaitExpression| is *true*.</li>
+    <li>If the source code matching this production is strict code, the Early Error rules for <emu-grammar>UniqueFormalParameters : FormalParameters</emu-grammar> are applied.</li>
+    <li>If the source code matching this production is strict code, it is a Syntax Error if |BindingIdentifier| is the |IdentifierName| `eval` or the |IdentifierName| `arguments`.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of |FormalParameters| also occurs in the LexicallyDeclaredNames of |AsyncFunctionBody|.</li>
+    <li>It is a Syntax Error if |FormalParameters| Contains |SuperProperty| is *true*.</li>
+    <li>It is a Syntax Error if |AsyncFunctionBody| Contains |SuperProperty| is *true*.</li>
+    <li>It is a Syntax Error if |FormalParameters| Contains |SuperCall| is *true*.</li>
+    <li>It is a Syntax Error if |AsyncFunctionBody| Contains |SuperCall| is *true*.</li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-async-arrow-function-definitions-static-semantics-early-errors">14.7.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-async-arrow-function-definitions-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>
+    AsyncArrowFunction : `async` [no LineTerminator here] AsyncArrowBindingIdentifier [no LineTerminator here] `=>` AsyncConciseBody
+  </emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if any element of the BoundNames of |AsyncArrowBindingIdentifier| also occurs in the LexicallyDeclaredNames of |AsyncConciseBody|.</li>
+  </ul>
+  <emu-grammar>
+    AsyncArrowFunction : CoverCallExpressionAndAsyncArrowHead [no LineTerminator here] `=>` AsyncConciseBody
+  </emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if |CoverCallExpressionAndAsyncArrowHead| Contains |YieldExpression| is *true*.</li>
+    <li>It is a Syntax Error if |CoverCallExpressionAndAsyncArrowHead| Contains |AwaitExpression| is *true*.</li>
+    <li>It is a Syntax Error if the lexical token sequence matched by |CoverCallExpressionAndAsyncArrowHead| cannot be parsed with no tokens left over using |AsyncArrowHead| as the goal symbol.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of |CoverCallExpressionAndAsyncArrowHead| also occurs in the LexicallyDeclaredNames of |AsyncConciseBody|.</li>
+    <li>It is a Syntax Error if ContainsUseStrict of |AsyncConciseBody| is *true* and IsSimpleParameterList of |CoverCallExpressionAndAsyncArrowHead| is *false*.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of |AsyncConciseBody| is *true* and the goal symbol of the syntactic grammar is |Script|.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of |AsyncConciseBody| is *true* and the goal symbol of the syntactic grammar is |Module|.</ins>
+    </li>
+    <li>All Early Error rules for |AsyncArrowHead| and its derived productions apply to CoveredAsyncArrowHead of |CoverCallExpressionAndAsyncArrowHead|.</li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-scripts-static-semantics-early-errors">15.1.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-scripts-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>Script : ScriptBody</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of |ScriptBody| contains any duplicate entries.
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of |ScriptBody| also occurs in the VarDeclaredNames of |ScriptBody|.
+    </li>
+  </ul>
+  <emu-grammar>ScriptBody : StatementList</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if |StatementList| Contains `super` unless the source code containing `super` is eval code that is being processed by a direct eval. Additional early error rules for `super` within direct eval are defined in <emu-xref href="#sec-performeval"></emu-xref>.
+    </li>
+    <li>
+      It is a Syntax Error if |StatementList| Contains |NewTarget| unless the source code containing |NewTarget| is eval code that is being processed by a direct eval. Additional early error rules for |NewTarget| in direct eval are defined in <emu-xref href="#sec-performeval"></emu-xref>.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of |StatementList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of |StatementList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of |StatementList| with arguments &laquo; &raquo; and &laquo; &raquo; is *true*.
+    </li>
+    <li>
+     <ins>It is a Syntax Error if the Directive Prologue of |StatementList| contains a Use Module Directive.</ins>
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section <a href="https://tc39.github.io/ecma262/#sec-modules-semantics-static-semantics-early-errors">15.2.1.1 Static Semantics: Early Errors</a> are modified as follows.</p>
+
+<emu-clause id="sec-module-semantics-static-semantics-early-errors">
+  <h1>Static Semantics: Early Errors</h1>
+  <emu-grammar>ModuleBody : ModuleItemList</emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of |ModuleItemList| contains any duplicate entries.
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of |ModuleItemList| also occurs in the VarDeclaredNames of |ModuleItemList|.
+    </li>
+    <li>
+      It is a Syntax Error if the ExportedNames of |ModuleItemList| contains any duplicate entries.
+    </li>
+    <li>
+      It is a Syntax Error if any element of the ExportedBindings of |ModuleItemList| does not also occur in either the VarDeclaredNames of |ModuleItemList|, or the LexicallyDeclaredNames of |ModuleItemList|.
+    </li>
+    <li>
+      It is a Syntax Error if |ModuleItemList| Contains `super`.
+    </li>
+    <li>
+      It is a Syntax Error if |ModuleItemList| Contains |NewTarget|.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of |ModuleItemList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of |ModuleItemList| with argument &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of |ModuleItemList| with arguments &laquo; &raquo; and &laquo; &raquo; is *true*.
+    </li>
+    <li>
+      <ins>It is a Syntax Error if the Directive Prologue of |StatementList| contains a Use Script Directive.</ins>
+    </li>
+  </ul>
+  <emu-note>
+    <p>The duplicate ExportedNames rule implies that multiple `export default` |ExportDeclaration| items within a |ModuleBody| is a Syntax Error. Additional error conditions relating to conflicting or duplicate declarations are checked during module linking prior to evaluation of a |Module|. If any such errors are detected the |Module| is not evaluated.</p>
+  </emu-note>
+</emu-clause>
