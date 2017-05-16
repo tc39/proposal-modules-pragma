@@ -30,5 +30,5 @@ This is suboptimal for readability, since it does not clearly convey what its in
 ## Specification
 
   * [Ecmarkup source](https://github.com/tc39/proposal-modules-pragma/blob/master/spec.html)
-  * HTML version
+  * [HTML version](https://tc39.github.io/proposal-modules-pragma/)
 
