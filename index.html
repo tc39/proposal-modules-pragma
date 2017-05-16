@@ -1,0 +1,542 @@
+<!doctype html>
+<head><meta charset="utf-8">
+<title>Module/script mode pragmas</title><script type="application/json" id="menu-search-biblio">[{"type":"term","term":"Directive Prologue","refId":"sec-directive-prologues-and-the-use-strict-directive","referencingIds":["_ref_0","_ref_1","_ref_3","_ref_5","_ref_7","_ref_9","_ref_11","_ref_13","_ref_15","_ref_16","_ref_18","_ref_20","_ref_22","_ref_24"],"id":"directive-prologue","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"Directive Prologue"},{"type":"term","term":"Use Strict Directive","refId":"sec-directive-prologues-and-the-use-strict-directive","referencingIds":["_ref_2","_ref_4","_ref_14","_ref_17"],"id":"use-strict-directive","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"Use Strict Directive"},{"type":"term","term":"Use Module Directive","refId":"sec-directive-prologues-and-the-use-strict-directive","referencingIds":["_ref_6","_ref_8","_ref_19","_ref_23"],"id":"use-module-directive","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"Use Module Directive"},{"type":"term","term":"Use Script Directive","refId":"sec-directive-prologues-and-the-use-strict-directive","referencingIds":["_ref_10","_ref_12","_ref_21","_ref_25"],"id":"use-script-directive","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"Use Script Directive"},{"type":"clause","id":"sec-directive-prologues-and-the-use-strict-directive","aoid":null,"title":"Directive Prologues and the Use Strict Directive","titleHTML":"Directive Prologues<del> and the Use Strict Directive</del>","number":"1","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Directive Prologues and the Use Strict Directive"},{"type":"production","id":"prod-FunctionDeclaration","name":"FunctionDeclaration","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"FunctionDeclaration"},{"type":"production","id":"prod-FunctionExpression","name":"FunctionExpression","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"FunctionExpression"},{"type":"production","id":"prod-UniqueFormalParameters","name":"UniqueFormalParameters","referencingIds":["_ref_56","_ref_59","_ref_63","_ref_71","_ref_73","_ref_74","_ref_76","_ref_87","_ref_88","_ref_91","_ref_92"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"UniqueFormalParameters"},{"type":"production","id":"prod-FormalParameters","name":"FormalParameters","referencingIds":["_ref_29","_ref_31","_ref_33","_ref_35","_ref_37","_ref_38","_ref_40","_ref_42","_ref_45","_ref_46","_ref_77","_ref_78","_ref_79","_ref_80","_ref_81","_ref_83","_ref_84","_ref_85","_ref_86","_ref_93","_ref_94","_ref_95","_ref_96","_ref_97","_ref_99","_ref_100","_ref_101","_ref_102","_ref_103"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"FormalParameters"},{"type":"production","id":"prod-FunctionBody","name":"FunctionBody","referencingIds":["_ref_26","_ref_30","_ref_32","_ref_34","_ref_36","_ref_39","_ref_41","_ref_43","_ref_44","_ref_47","_ref_49","_ref_57","_ref_58","_ref_60","_ref_62","_ref_64","_ref_65","_ref_66","_ref_67","_ref_69","_ref_70"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"FunctionBody"},{"type":"clause","id":"sec-function-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"2","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"clause","id":"sec-function-definitions-static-semantics-containsusemodule","aoid":null,"title":"Static Semantics: ContainsUseModule","titleHTML":"Static Semantics: ContainsUseModule","number":"3","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: ContainsUseModule"},{"type":"clause","id":"sec-function-definitions-static-semantics-containsusescript","aoid":null,"title":"Static Semantics: ContainsUseScript","titleHTML":"Static Semantics: ContainsUseScript","number":"4","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: ContainsUseScript"},{"type":"production","id":"prod-ArrowFunction","name":"ArrowFunction","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"ArrowFunction"},{"type":"production","id":"prod-ArrowParameters","name":"ArrowParameters","referencingIds":["_ref_50","_ref_51","_ref_52","_ref_53","_ref_55"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"ArrowParameters"},{"type":"clause","id":"sec-arrow-function-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"5","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-MethodDefinition","name":"MethodDefinition","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"MethodDefinition"},{"type":"clause","id":"sec-method-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"6","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-GeneratorMethod","name":"GeneratorMethod","referencingIds":["_ref_72"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"GeneratorMethod"},{"type":"production","id":"prod-GeneratorDeclaration","name":"GeneratorDeclaration","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"GeneratorDeclaration"},{"type":"production","id":"prod-GeneratorExpression","name":"GeneratorExpression","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"GeneratorExpression"},{"type":"clause","id":"sec-generator-function-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"7","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-AsyncMethod","name":"AsyncMethod","referencingIds":["_ref_90"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"AsyncMethod"},{"type":"production","id":"prod-AsyncFunctionDeclaration","name":"AsyncFunctionDeclaration","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"AsyncFunctionDeclaration"},{"type":"production","id":"prod-AsyncFunctionExpression","name":"AsyncFunctionExpression","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"AsyncFunctionExpression"},{"type":"clause","id":"sec-async-function-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"8","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-AsyncArrowFunction","name":"AsyncArrowFunction","referencingIds":[],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"AsyncArrowFunction"},{"type":"clause","id":"sec-async-arrow-function-definitions-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"9","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-Script","name":"Script","referencingIds":["_ref_48","_ref_54","_ref_61","_ref_68","_ref_75","_ref_82","_ref_89","_ref_98","_ref_104"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"Script"},{"type":"production","id":"prod-ScriptBody","name":"ScriptBody","referencingIds":["_ref_27","_ref_105","_ref_106","_ref_107","_ref_108"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"ScriptBody"},{"type":"clause","id":"sec-scripts-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"10","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"},{"type":"production","id":"prod-ModuleBody","name":"ModuleBody","referencingIds":["_ref_28","_ref_109"],"namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","key":"ModuleBody"},{"type":"clause","id":"sec-module-semantics-static-semantics-early-errors","aoid":null,"title":"Static Semantics: Early Errors","titleHTML":"Static Semantics: Early Errors","number":"11","namespace":"https://tc39.github.io/proposal-modules-pragma","location":"","referencingIds":[],"key":"Static Semantics: Early Errors"}]</script></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-directive-prologues-and-the-use-strict-directive" title="Directive Prologues and the Use Strict Directive"><span class="secnum">1</span> Directive Prologues<del> and the Use Strict Directive</del></a></li><li><span class="item-toggle-none"></span><a href="#sec-function-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">2</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-function-definitions-static-semantics-containsusemodule" title="Static Semantics: ContainsUseModule"><span class="secnum">3</span> SS: ContainsUseModule</a></li><li><span class="item-toggle-none"></span><a href="#sec-function-definitions-static-semantics-containsusescript" title="Static Semantics: ContainsUseScript"><span class="secnum">4</span> SS: ContainsUseScript</a></li><li><span class="item-toggle-none"></span><a href="#sec-arrow-function-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">5</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-method-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">6</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-generator-function-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">7</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-async-function-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">8</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-async-arrow-function-definitions-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">9</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-scripts-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">10</span> SS: Early Errors</a></li><li><span class="item-toggle-none"></span><a href="#sec-module-semantics-static-semantics-early-errors" title="Static Semantics: Early Errors"><span class="secnum">11</span> SS: Early Errors</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / May 16, 2017</h1><h1 class="title">Module/script mode pragmas</h1>
+<script src="ecmarkup.js"></script>
+<link rel="stylesheet" href="ecmarkup.css">
+<style>
+  hr {
+    height: 0.25em;
+    background: #ccc;
+    border: 0;
+    margin: 2em 0;
+  }
+
+</style>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-directive-prologues-and-the-use-strict-directive">14.1.1 Directive Prologues and the Use Strict Directive</a> is modified as follows.</p>
+
+<emu-clause id="sec-directive-prologues-and-the-use-strict-directive">
+  <h1><span class="secnum">1</span>Directive Prologues<del> and the Use Strict Directive</del></h1>
+  <p>A  <dfn id="directive-prologue">Directive Prologue</dfn> is the longest sequence of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt>s occurring as the initial <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementListItem">StatementListItem</a></emu-nt>s or <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItem">ModuleItem</a></emu-nt>s of a <emu-nt id="_ref_26"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt>, a <emu-nt id="_ref_27"><a href="#prod-ScriptBody">ScriptBody</a></emu-nt>, or a <emu-nt id="_ref_28"><a href="#prod-ModuleBody">ModuleBody</a></emu-nt> and where each <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt> in the sequence consists entirely of a <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StringLiteral">StringLiteral</a></emu-nt> token followed by a semicolon. The semicolon may appear explicitly or may be inserted by automatic semicolon insertion. A <emu-xref href="#directive-prologue" id="_ref_0"><a href="#directive-prologue">Directive Prologue</a></emu-xref> may be an empty sequence.</p>
+  <p>A  <dfn id="use-strict-directive">Use Strict Directive</dfn> is an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt> in a <emu-xref href="#directive-prologue" id="_ref_1"><a href="#directive-prologue">Directive Prologue</a></emu-xref> whose <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StringLiteral">StringLiteral</a></emu-nt> is either the exact code unit sequences <code>"use strict"</code> or <code>'use strict'</code>. A <emu-xref href="#use-strict-directive" id="_ref_2"><a href="#use-strict-directive">Use Strict Directive</a></emu-xref> may not contain an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-EscapeSequence">EscapeSequence</a></emu-nt> or <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineContinuation">LineContinuation</a></emu-nt>.</p>
+  <p>A <emu-xref href="#directive-prologue" id="_ref_3"><a href="#directive-prologue">Directive Prologue</a></emu-xref> may contain more than one <emu-xref href="#use-strict-directive" id="_ref_4"><a href="#use-strict-directive">Use Strict Directive</a></emu-xref>. However, an implementation may issue a warning if this occurs.</p>
+  <p><ins>A  <dfn id="use-module-directive">Use Module Directive</dfn> is an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt> in a <emu-xref href="#directive-prologue" id="_ref_5"><a href="#directive-prologue">Directive Prologue</a></emu-xref> whose <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StringLiteral">StringLiteral</a></emu-nt> is either the exact code unit sequences <code>"use module"</code> or <code>'use module'</code>. A <emu-xref href="#use-module-directive" id="_ref_6"><a href="#use-module-directive">Use Module Directive</a></emu-xref> may not contain an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-EscapeSequence">EscapeSequence</a></emu-nt> or <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineContinuation">LineContinuation</a></emu-nt>.</ins></p>
+  <p><ins>A <emu-xref href="#directive-prologue" id="_ref_7"><a href="#directive-prologue">Directive Prologue</a></emu-xref> may contain more than one <emu-xref href="#use-module-directive" id="_ref_8"><a href="#use-module-directive">Use Module Directive</a></emu-xref>. However, an implementation may issue a warning if this occurs.</ins></p>
+  <p><ins>A  <dfn id="use-script-directive">Use Script Directive</dfn> is an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt> in a <emu-xref href="#directive-prologue" id="_ref_9"><a href="#directive-prologue">Directive Prologue</a></emu-xref> whose <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StringLiteral">StringLiteral</a></emu-nt> is either the exact code unit sequences <code>"use script"</code> or <code>'use script'</code>. A <emu-xref href="#use-script-directive" id="_ref_10"><a href="#use-script-directive">Use Script Directive</a></emu-xref> may not contain an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-EscapeSequence">EscapeSequence</a></emu-nt> or <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineContinuation">LineContinuation</a></emu-nt>.</ins></p>
+  <p><ins>A <emu-xref href="#directive-prologue" id="_ref_11"><a href="#directive-prologue">Directive Prologue</a></emu-xref> may contain more than one <emu-xref href="#use-script-directive" id="_ref_12"><a href="#use-script-directive">Use Script Directive</a></emu-xref>. However, an implementation may issue a warning if this occurs.</ins></p>
+  <emu-note><span class="note">Note</span><div class="note-contents">
+    <p>The <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt>s of a <emu-xref href="#directive-prologue" id="_ref_13"><a href="#directive-prologue">Directive Prologue</a></emu-xref> are evaluated normally during evaluation of the containing production. Implementations may define implementation specific meanings for <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt>s which are not a <emu-xref href="#use-strict-directive" id="_ref_14"><a href="#use-strict-directive">Use Strict Directive</a></emu-xref> and which occur in a <emu-xref href="#directive-prologue" id="_ref_15"><a href="#directive-prologue">Directive Prologue</a></emu-xref>. If an appropriate notification mechanism exists, an implementation should issue a warning if it encounters in a <emu-xref href="#directive-prologue" id="_ref_16"><a href="#directive-prologue">Directive Prologue</a></emu-xref> an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExpressionStatement">ExpressionStatement</a></emu-nt> that is not a <emu-xref href="#use-strict-directive" id="_ref_17"><a href="#use-strict-directive">Use Strict Directive</a></emu-xref> and which does not have a meaning defined by the implementation.</p>
+  </div></emu-note>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-function-definitions-static-semantics-early-errors">14.1.2 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-function-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">2</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="FunctionDeclaration" collapsed="" id="prod-FunctionDeclaration">
+    <emu-nt><a href="#prod-FunctionDeclaration">FunctionDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="81739a57"><emu-t>function</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_29"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt id="_ref_30"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="FunctionDeclaration" collapsed="">
+    <emu-nt><a href="#prod-FunctionDeclaration">FunctionDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="b26bacea"><emu-t>function</emu-t><emu-t>(</emu-t><emu-nt id="_ref_31"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt id="_ref_32"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="FunctionExpression" collapsed="" id="prod-FunctionExpression">
+    <emu-nt><a href="#prod-FunctionExpression">FunctionExpression</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="8379937e"><emu-t>function</emu-t><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_33"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt id="_ref_34"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      If the source code matching this production is <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, the Early Error rules for  <emu-grammar><emu-production name="UniqueFormalParameters" collapsed="" id="prod-UniqueFormalParameters" class=" inline">
+    <emu-nt><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="0218c6f5"><emu-nt id="_ref_35"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> are applied.
+    
+    </li>
+    <li>
+      If the source code matching this production is <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, it is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt> is the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>eval</code> or the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>arguments</code>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt id="_ref_36"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_37"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_38"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt id="_ref_39"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_40"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_41"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_42"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_43"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+  </ul>
+  <emu-note><span class="note">Note 1</span><div class="note-contents">
+    <p>The LexicallyDeclaredNames of a <emu-nt id="_ref_44"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> does not include identifiers bound using var or function declarations.</p>
+  </div></emu-note>
+  <emu-grammar><emu-production name="UniqueFormalParameters" collapsed="">
+    <emu-nt><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="0218c6f5"><emu-nt id="_ref_45"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if BoundNames of <emu-nt id="_ref_46"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> contains any duplicate elements.
+    
+    </li>
+  </ul>
+  <emu-grammar><emu-production name="FormalParameters" collapsed="" id="prod-FormalParameters">
+    <emu-nt><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="32e3c3aa"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-FormalParameterList">FormalParameterList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if IsSimpleParameterList of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FormalParameterList">FormalParameterList</a></emu-nt> is <emu-val>false</emu-val> and BoundNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FormalParameterList">FormalParameterList</a></emu-nt> contains any duplicate elements.
+    
+    </li>
+  </ul>
+  <emu-note><span class="note">Note 2</span><div class="note-contents">
+    <p>Multiple occurrences of the same <emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt> in a <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FormalParameterList">FormalParameterList</a></emu-nt> is only allowed for functions and generator functions which have simple parameter lists and which are not defined in <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>.</p>
+  </div></emu-note>
+  <emu-grammar><emu-production name="FunctionBody" collapsed="" id="prod-FunctionBody">
+    <emu-nt><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="5cdf1a9f"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> contains any duplicate entries.
+    
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> also occurs in the VarDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> with arguments « » and « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt id="_ref_47"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_48"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt id="_ref_49"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The following new sections are added before  <a href="https://tc39.github.io/ecma262/#sec-function-definitions-static-semantics-expectedargumentcount">14.1.7 Static Semantics: ExpectedArgumentCount</a>.</p>
+
+<emu-clause id="sec-function-definitions-static-semantics-containsusemodule">
+  <h1><span class="secnum">3</span>Static Semantics: ContainsUseModule</h1>
+  <emu-see-also-para op="ContainsUseModule"></emu-see-also-para>
+  <emu-grammar><emu-production name="FunctionBody" collapsed="">
+    <emu-nt><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="5cdf1a9f"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <emu-alg><ol><li>If the <emu-xref href="#directive-prologue" id="_ref_18"><a href="#directive-prologue">Directive Prologue</a></emu-xref> of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> contains a <emu-xref href="#use-module-directive" id="_ref_19"><a href="#use-module-directive">Use Module Directive</a></emu-xref>, return <emu-val>true</emu-val>; otherwise, return <emu-val>false</emu-val>.
+  </li></ol></emu-alg>
+</emu-clause>
+
+<emu-clause id="sec-function-definitions-static-semantics-containsusescript">
+  <h1><span class="secnum">4</span>Static Semantics: ContainsUseScript</h1>
+  <emu-see-also-para op="ContainsUseScript"></emu-see-also-para>
+  <emu-grammar><emu-production name="FunctionBody" collapsed="">
+    <emu-nt><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="5cdf1a9f"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <emu-alg><ol><li>If the <emu-xref href="#directive-prologue" id="_ref_20"><a href="#directive-prologue">Directive Prologue</a></emu-xref> of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-FunctionStatementList">FunctionStatementList</a></emu-nt> contains a <emu-xref href="#use-script-directive" id="_ref_21"><a href="#use-script-directive">Use Script Directive</a></emu-xref>, return <emu-val>true</emu-val>; otherwise, return <emu-val>false</emu-val>.
+  </li></ol></emu-alg>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-arrow-function-definitions-static-semantics-early-errors">14.2.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-arrow-function-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">5</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="ArrowFunction" collapsed="" id="prod-ArrowFunction">
+    <emu-nt><a href="#prod-ArrowFunction">ArrowFunction</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="88410e0f"><emu-nt id="_ref_50"><a href="#prod-ArrowParameters">ArrowParameters</a></emu-nt><emu-t>=&gt;</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-ConciseBody">ConciseBody</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_51"><a href="#prod-ArrowParameters">ArrowParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-YieldExpression">YieldExpression</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_52"><a href="#prod-ArrowParameters">ArrowParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AwaitExpression">AwaitExpression</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ConciseBody">ConciseBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_53"><a href="#prod-ArrowParameters">ArrowParameters</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ConciseBody">ConciseBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_54"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ConciseBody">ConciseBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_55"><a href="#prod-ArrowParameters">ArrowParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ConciseBody">ConciseBody</a></emu-nt>.
+    
+    </li>
+  </ul>
+  <emu-grammar><emu-production name="ArrowParameters" params="Yield, Await" collapsed="" id="prod-ArrowParameters">
+    <emu-nt params="Yield, Await"><a href="#prod-ArrowParameters">ArrowParameters</a><emu-mods><emu-params>[Yield, Await]</emu-params></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs a="29cadaef"><emu-nt params="?Yield, ?Await"><a href="https://tc39.github.io/ecma262/#prod-CoverParenthesizedExpressionAndArrowParameterList">CoverParenthesizedExpressionAndArrowParameterList</a><emu-mods><emu-params>[?Yield, ?Await]</emu-params></emu-mods></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the lexical token sequence matched by <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverParenthesizedExpressionAndArrowParameterList">CoverParenthesizedExpressionAndArrowParameterList</a></emu-nt> cannot be parsed with no token
+s left over using <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ArrowFormalParameters">ArrowFormalParameters</a></emu-nt> as the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> with its  <sub>[Yield]</sub> and  <sub>[Await]</sub> parameters set to the values used when par
+sing this <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverParenthesizedExpressionAndArrowParameterList">CoverParenthesizedExpressionAndArrowParameterList</a></emu-nt>.
+    
+    </li>
+    <li>
+      All <emu-xref href="#early-error"><a href="https://tc39.github.io/ecma262/#early-error">early error</a></emu-xref> rules for <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ArrowFormalParameters">ArrowFormalParameters</a></emu-nt> and its derived productions also apply to CoveredFormalsList of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverParenthesizedExpressionAndArrowParameterList">CoverParenthesizedExpressionAndArrowParameterList</a></emu-nt>.
+    
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-method-definitions-static-semantics-early-errors">14.3.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-method-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">6</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="MethodDefinition" collapsed="" id="prod-MethodDefinition">
+    <emu-nt><a href="#prod-MethodDefinition">MethodDefinition</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="cb8e53e9"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertyName">PropertyName</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_56"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt id="_ref_57"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt id="_ref_58"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_59"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt id="_ref_60"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_61"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt id="_ref_62"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_63"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt id="_ref_64"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt>.
+    
+    </li>
+  </ul>
+  <emu-grammar><emu-production name="MethodDefinition" collapsed="">
+    <emu-nt><a href="#prod-MethodDefinition">MethodDefinition</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="4402354c"><emu-t>set</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertyName">PropertyName</a></emu-nt><emu-t>(</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertySetParameterList">PropertySetParameterList</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt id="_ref_65"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if BoundNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertySetParameterList">PropertySetParameterList</a></emu-nt> contains any duplicate elements.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt id="_ref_66"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertySetParameterList">PropertySetParameterList</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt id="_ref_67"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_68"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt id="_ref_69"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertySetParameterList">PropertySetParameterList</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt id="_ref_70"><a href="#prod-FunctionBody">FunctionBody</a></emu-nt>.
+    
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-generator-function-definitions-static-semantics-early-errors">14.4.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-generator-function-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">7</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="GeneratorMethod" collapsed="" id="prod-GeneratorMethod">
+    <emu-nt><a href="#prod-GeneratorMethod">GeneratorMethod</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="c5c757ac"><emu-t>*</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertyName">PropertyName</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_71"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if HasDirectSuper of <emu-nt id="_ref_72"><a href="#prod-GeneratorMethod">GeneratorMethod</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_73"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-YieldExpression">YieldExpression</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_74"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_75"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_76"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt>.
+    
+    </li>
+  </ul>
+  <emu-grammar><emu-production name="GeneratorDeclaration" collapsed="" id="prod-GeneratorDeclaration">
+    <emu-nt><a href="#prod-GeneratorDeclaration">GeneratorDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="7dbc99b6"><emu-t>function</emu-t><emu-t>*</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_77"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="GeneratorDeclaration" collapsed="">
+    <emu-nt><a href="#prod-GeneratorDeclaration">GeneratorDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="0d271960"><emu-t>function</emu-t><emu-t>*</emu-t><emu-t>(</emu-t><emu-nt id="_ref_78"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="GeneratorExpression" collapsed="" id="prod-GeneratorExpression">
+    <emu-nt><a href="#prod-GeneratorExpression">GeneratorExpression</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="df68213a"><emu-t>function</emu-t><emu-t>*</emu-t><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_79"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      If the source code matching this production is <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, the Early Error rules for  <emu-grammar><emu-production name="UniqueFormalParameters" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="0218c6f5"><emu-nt id="_ref_80"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> are applied.
+    
+    </li>
+    <li>
+      If the source code matching this production is <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, it is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt> is the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>eval</code> or the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>arguments</code>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_81"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> is <emu-val>false</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_82"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>
+      It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_83"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_84"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-YieldExpression">YieldExpression</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_85"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt id="_ref_86"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-GeneratorBody">GeneratorBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.
+    
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-async-function-definitions-static-semantics-early-errors">14.6.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-async-function-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">8</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="AsyncMethod" collapsed="" id="prod-AsyncMethod">
+    <emu-nt><a href="#prod-AsyncMethod">AsyncMethod</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="7d771781"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-nt><a href="https://tc39.github.io/ecma262/#prod-PropertyName">PropertyName</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_87"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_88"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> is <emu-val>false</emu-val>.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_89"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>It is a Syntax Error if HasDirectSuper of <emu-nt id="_ref_90"><a href="#prod-AsyncMethod">AsyncMethod</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if <emu-nt id="_ref_91"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AwaitExpression">AwaitExpression</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_92"><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt>.</li>
+  </ul>
+  <emu-grammar><emu-production name="AsyncFunctionDeclaration" collapsed="" id="prod-AsyncFunctionDeclaration">
+    <emu-nt><a href="#prod-AsyncFunctionDeclaration">AsyncFunctionDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="6767e0c7"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>function</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_93"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="AsyncFunctionDeclaration" collapsed="">
+    <emu-nt><a href="#prod-AsyncFunctionDeclaration">AsyncFunctionDeclaration</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="6d58af42"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>function</emu-t><emu-t>(</emu-t><emu-nt id="_ref_94"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="AsyncFunctionExpression" collapsed="" id="prod-AsyncFunctionExpression">
+    <emu-nt><a href="#prod-AsyncFunctionExpression">AsyncFunctionExpression</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="6d58af42"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>function</emu-t><emu-t>(</emu-t><emu-nt id="_ref_95"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production>
+<emu-production name="AsyncFunctionExpression" collapsed="">
+    <emu-nt><a href="#prod-AsyncFunctionExpression">AsyncFunctionExpression</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="6767e0c7"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>function</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt><emu-t>(</emu-t><emu-nt id="_ref_96"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt><emu-t>}</emu-t></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt id="_ref_97"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> is <emu-val>false</emu-val>.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_98"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>It is a Syntax Error if <emu-nt id="_ref_99"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AwaitExpression">AwaitExpression</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>If the source code matching this production is strict code, the Early Error rules for  <emu-grammar><emu-production name="UniqueFormalParameters" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-UniqueFormalParameters">UniqueFormalParameters</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="0218c6f5"><emu-nt id="_ref_100"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> are applied.</li>
+    <li>If the source code matching this production is strict code, it is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-BindingIdentifier">BindingIdentifier</a></emu-nt> is the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>eval</code> or the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierName">IdentifierName</a></emu-nt> <code>arguments</code>.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of <emu-nt id="_ref_101"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt>.</li>
+    <li>It is a Syntax Error if <emu-nt id="_ref_102"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperProperty">SuperProperty</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if <emu-nt id="_ref_103"><a href="#prod-FormalParameters">FormalParameters</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncFunctionBody">AsyncFunctionBody</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SuperCall">SuperCall</a></emu-nt> is <emu-val>true</emu-val>.</li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-async-arrow-function-definitions-static-semantics-early-errors">14.7.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-async-arrow-function-definitions-static-semantics-early-errors">
+  <h1><span class="secnum">9</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="AsyncArrowFunction" collapsed="" id="prod-AsyncArrowFunction">
+    <emu-nt><a href="#prod-AsyncArrowFunction">AsyncArrowFunction</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="5adca9d3"><emu-t>async</emu-t><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncArrowBindingIdentifier">AsyncArrowBindingIdentifier</a></emu-nt><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>=&gt;</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if any element of the BoundNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncArrowBindingIdentifier">AsyncArrowBindingIdentifier</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt>.</li>
+  </ul>
+  <emu-grammar><emu-production name="AsyncArrowFunction" collapsed="">
+    <emu-nt><a href="#prod-AsyncArrowFunction">AsyncArrowFunction</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="f8b7f7ed"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt><emu-gann>[no <emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt> here]</emu-gann><emu-t>=&gt;</emu-t><emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-YieldExpression">YieldExpression</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AwaitExpression">AwaitExpression</a></emu-nt> is <emu-val>true</emu-val>.</li>
+    <li>It is a Syntax Error if the lexical token sequence matched by <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt> cannot be parsed with no tokens left over using <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncArrowHead">AsyncArrowHead</a></emu-nt> as the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref>.</li>
+    <li>It is a Syntax Error if any element of the BoundNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt> also occurs in the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt>.</li>
+    <li>It is a Syntax Error if ContainsUseStrict of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt> is <emu-val>true</emu-val> and IsSimpleParameterList of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt> is <emu-val>false</emu-val>.</li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseModule of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt id="_ref_104"><a href="#prod-Script">Script</a></emu-nt>.</ins>
+    </li>
+    <li>
+      <ins>It is a Syntax Error if ContainsUseScript of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncConciseBody">AsyncConciseBody</a></emu-nt> is <emu-val>true</emu-val> and the <emu-xref href="#sec-context-free-grammars"><a href="https://tc39.github.io/ecma262/#sec-context-free-grammars">goal symbol</a></emu-xref> of the syntactic grammar is <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>.</ins>
+    </li>
+    <li>All Early Error rules for <emu-nt><a href="https://tc39.github.io/ecma262/#prod-AsyncArrowHead">AsyncArrowHead</a></emu-nt> and its derived productions apply to CoveredAsyncArrowHead of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-CoverCallExpressionAndAsyncArrowHead">CoverCallExpressionAndAsyncArrowHead</a></emu-nt>.</li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-scripts-static-semantics-early-errors">15.1.1 Static Semantics: Early Errors</a> is modified as follows.</p>
+
+<emu-clause id="sec-scripts-static-semantics-early-errors">
+  <h1><span class="secnum">10</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="Script" collapsed="" id="prod-Script">
+    <emu-nt><a href="#prod-Script">Script</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="b78f99cc"><emu-nt id="_ref_105"><a href="#prod-ScriptBody">ScriptBody</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of <emu-nt id="_ref_106"><a href="#prod-ScriptBody">ScriptBody</a></emu-nt> contains any duplicate entries.
+    
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of <emu-nt id="_ref_107"><a href="#prod-ScriptBody">ScriptBody</a></emu-nt> also occurs in the VarDeclaredNames of <emu-nt id="_ref_108"><a href="#prod-ScriptBody">ScriptBody</a></emu-nt>.
+    
+    </li>
+  </ul>
+  <emu-grammar><emu-production name="ScriptBody" collapsed="" id="prod-ScriptBody">
+    <emu-nt><a href="#prod-ScriptBody">ScriptBody</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="cf403a0c"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> Contains <code>super</code> unless the source code containing <code>super</code> is eval code that is being processed by a <emu-xref href="#sec-function-calls-runtime-semantics-evaluation"><a href="https://tc39.github.io/ecma262/#sec-function-calls-runtime-semantics-evaluation">direct eval</a></emu-xref>. Additional <emu-xref href="#early-error"><a href="https://tc39.github.io/ecma262/#early-error">early error</a></emu-xref> rules for <code>super</code> within <emu-xref href="#sec-function-calls-runtime-semantics-evaluation"><a href="https://tc39.github.io/ecma262/#sec-function-calls-runtime-semantics-evaluation">direct eval</a></emu-xref> are defined in  <emu-xref href="#sec-performeval"><a href="https://tc39.github.io/ecma262/#sec-performeval">18.2.1.1</a></emu-xref>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-NewTarget">NewTarget</a></emu-nt> unless the source code containing <emu-nt><a href="https://tc39.github.io/ecma262/#prod-NewTarget">NewTarget</a></emu-nt> is eval code that is being processed by a <emu-xref href="#sec-function-calls-runtime-semantics-evaluation"><a href="https://tc39.github.io/ecma262/#sec-function-calls-runtime-semantics-evaluation">direct eval</a></emu-xref>. Additional <emu-xref href="#early-error"><a href="https://tc39.github.io/ecma262/#early-error">early error</a></emu-xref> rules for <emu-nt><a href="https://tc39.github.io/ecma262/#prod-NewTarget">NewTarget</a></emu-nt> in <emu-xref href="#sec-function-calls-runtime-semantics-evaluation"><a href="https://tc39.github.io/ecma262/#sec-function-calls-runtime-semantics-evaluation">direct eval</a></emu-xref> are defined in  <emu-xref href="#sec-performeval"><a href="https://tc39.github.io/ecma262/#sec-performeval">18.2.1.1</a></emu-xref>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> with arguments « » and « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+     <ins>It is a Syntax Error if the <emu-xref href="#directive-prologue" id="_ref_22"><a href="#directive-prologue">Directive Prologue</a></emu-xref> of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> contains a <emu-xref href="#use-module-directive" id="_ref_23"><a href="#use-module-directive">Use Module Directive</a></emu-xref>.</ins>
+    </li>
+  </ul>
+</emu-clause>
+
+<hr>
+
+<p>The section  <a href="https://tc39.github.io/ecma262/#sec-modules-semantics-static-semantics-early-errors">15.2.1.1 Static Semantics: Early Errors</a> are modified as follows.</p>
+
+<emu-clause id="sec-module-semantics-static-semantics-early-errors">
+  <h1><span class="secnum">11</span>Static Semantics: Early Errors</h1>
+  <emu-grammar><emu-production name="ModuleBody" collapsed="" id="prod-ModuleBody">
+    <emu-nt><a href="#prod-ModuleBody">ModuleBody</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="89010d7d"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar>
+  <ul>
+    <li>
+      It is a Syntax Error if the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> contains any duplicate entries.
+    
+    </li>
+    <li>
+      It is a Syntax Error if any element of the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> also occurs in the VarDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if the ExportedNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> contains any duplicate entries.
+    
+    </li>
+    <li>
+      It is a Syntax Error if any element of the ExportedBindings of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> does not also occur in either the VarDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt>, or the LexicallyDeclaredNames of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> Contains <code>super</code>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> Contains <emu-nt><a href="https://tc39.github.io/ecma262/#prod-NewTarget">NewTarget</a></emu-nt>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsDuplicateLabels of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedBreakTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> with argument « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      It is a Syntax Error if ContainsUndefinedContinueTarget of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ModuleItemList">ModuleItemList</a></emu-nt> with arguments « » and « » is <emu-val>true</emu-val>.
+    
+    </li>
+    <li>
+      <ins>It is a Syntax Error if the <emu-xref href="#directive-prologue" id="_ref_24"><a href="#directive-prologue">Directive Prologue</a></emu-xref> of <emu-nt><a href="https://tc39.github.io/ecma262/#prod-StatementList">StatementList</a></emu-nt> contains a <emu-xref href="#use-script-directive" id="_ref_25"><a href="#use-script-directive">Use Script Directive</a></emu-xref>.</ins>
+    </li>
+  </ul>
+  <emu-note><span class="note">Note</span><div class="note-contents">
+    <p>The duplicate ExportedNames rule implies that multiple <code>export default</code> <emu-nt><a href="https://tc39.github.io/ecma262/#prod-ExportDeclaration">ExportDeclaration</a></emu-nt> items within a <emu-nt id="_ref_109"><a href="#prod-ModuleBody">ModuleBody</a></emu-nt> is a Syntax Error. Additional error conditions relating to conflicting or duplicate declarations are checked during module linking prior to evaluation of a <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt>. If any such errors are detected the <emu-nt><a href="https://tc39.github.io/ecma262/#prod-Module">Module</a></emu-nt> is not evaluated.</p>
+  </div></emu-note>
+</emu-clause>
+</div></body>
