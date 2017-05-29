@@ -10,7 +10,7 @@ Since the _Script_ and _Module_ syntaxes have some overlap (in particular, most 
 
 Some host environments may offer out-of-band mechanisms for specifying the mode, such as HTML attributes (`<script type=module>`), configuration parameters (`"module": "main.js"`), command-line switches (`node -m`), or file extensions (`.mjs`). However, an in-band pragma for enforcing the mode can be useful for a number of reasons:
 
-  * **Portability:** A source file that wants to work in multiple host environments can be sure to select its mode without being sensitive the configuration parameters where it's used.
+  * **Portability:** A source file that wants to work in multiple host environments can be sure to select its mode without being sensitive to configuration parameters where it's used.
   * **Compatibility:** If a host environment like Node chooses to use file extensions to determine the mode, some content may wish to preserve existing filenames (for example, for clients that require the module by full filename) when migrating to standard modules. An in-band opt-in makes that possible.
 
 Finally, the fact that this is a pragma means that ecosystems where there is no formal or conceptual ambiguity -- in particular, ecosystems that author entirely using modules -- do not need to pollute their source code.
