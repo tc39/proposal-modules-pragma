@@ -25,7 +25,7 @@ export {};
 
 This syntax has no effect except to force a parsing error if a host environment attempts to parse it as a script.
 
-This is suboptimal for readability, since it does not clearly convey what its intended effect is. And it's also not applicable to the problem of enforcing that a source file is intended to be parsed as a module.
+This is suboptimal for readability, since it does not clearly convey what its intended effect is. It is also not applicable for the solving the complementary problem of enforcing that a source file is intended to be parsed as `script`.
 
 ## Specification
 
